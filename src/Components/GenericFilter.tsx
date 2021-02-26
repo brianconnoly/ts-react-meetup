@@ -41,6 +41,10 @@ const ageGroups = [
     },
 ];
 
+/**
+ * Аргументом фукнции переданной в getName будет AgeGroup с полями from, to и id
+ * Работает через дженерик без дополнительной типизации
+ */
 const AgeCluster: FC = () => <AbstractCluster groups={ageGroups} getName={({ from, to }) => `от ${from} до ${to}`} />;
 
 /**
@@ -59,6 +63,10 @@ const genderGroups = [
     },
 ];
 
+/**
+ * Аргументом фукнции переданной в getName будет GenderGroup с полем id: Gender
+ * Работает через дженерик без дополнительной типизации
+ */
 const GenderCluster: FC = () => (
     <AbstractCluster groups={genderGroups} getName={({ id }) => (id === Genders.Male ? 'Мужчины' : 'Женщины')} />
 );
